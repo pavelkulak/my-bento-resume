@@ -4,6 +4,8 @@ import TechStackCard from './components/TechStackCard';
 import ProjectCard from './components/ProjectCard';
 import SocialCard from './components/SocialCard';
 import ContributionGrid from './components/ContributionGrid';
+import { ArrowUp } from 'lucide-react';
+import TimeCard from './components/TimeCard';
 import StatusCard from './components/StatusCard';
 
 
@@ -38,10 +40,10 @@ function App() {
                 }}
             />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 py-16">
                 <div
                     ref={gridRef}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-min items-stretch"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-min items-stretch"
                 >
                     <HeroCard />
                     <SocialCard />
@@ -49,37 +51,27 @@ function App() {
                     <TechStackCard />
 
                     <ProjectCard
-                        title="To-Do List"
-                        image="./to-do.png"
-                        className="col-span-2 lg:col-span-2"
+                        title="Stream-Vibe"
+                        image="./stream-vibe.png"
+                        className="col-span-1 md:col-span-2 lg:col-span-2"
                         background="glow"
-                        link="https://todudo.netlify.app/"
+                        link="https://movie-tracker-eosin.vercel.app/"
+                        subtitle="Сервис для просмотра трейлеров к фильмам"
                     />
                     <ProjectCard
                         title="All-parkings"
                         subtitle="Умный сервис поиска и бронирования парковок с интерактивной картой и конструктором мест."
-                        className="col-span-2 lg:col-span-2 row-span-2"
+                        className="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 md:row-span-2"
                         background="animated"
                         image="./parking-dark.png"
                         link="https://all-parkings.vercel.app/"
                     />
-
-
-
-                    {/* <ProjectCard
-                        title="CV"
-                        image='./cv.png'
-                        className="col-span-2 lg:col-span-2"
-                        background="mesh"
-                    /> */}
-
-
-
                 </div>
 
-                <footer className="mt-16 text-center text-gray-600 text-sm">
-                    <p>Crafted with passion by Pavel</p>
-                    <p className="mt-2">2025 - Present</p>
+                <footer className="mt-16 flex justify-center text-gray-600 text-sm">
+                    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors">
+                        <ArrowUp className="w-10 h-10" />
+                    </button>
                 </footer>
             </div>
         </div>

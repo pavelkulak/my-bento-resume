@@ -42,10 +42,8 @@ export default function BentoCard({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {/* Base background */}
             <div className={`absolute inset-0 ${getBackgroundClass()}`} />
 
-            {/* Mesh pattern */}
             <div
                 className="absolute inset-0 opacity-20"
                 style={{
@@ -57,7 +55,6 @@ export default function BentoCard({
                 }}
             />
 
-            {/* Animated gradient background */}
             {background === 'animated' && (
                 <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -68,7 +65,6 @@ export default function BentoCard({
                 />
             )}
 
-            {/* Interactive glow follow mouse */}
             {isHovered && (
                 <>
                     <div
@@ -94,14 +90,10 @@ export default function BentoCard({
                 </>
             )}
 
-            {/* Border glow on hover */}
             <div className="absolute inset-0 rounded-2xl border border-white/5 group-hover:border-indigo-500/30 transition-all duration-300 pointer-events-none" />
 
-            {/* Corner accents */}
             <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-purple-500/10 to-transparent rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-            {/* Content */}
             <div className="relative z-10 h-full w-full">{children}</div>
 
             <style>{`

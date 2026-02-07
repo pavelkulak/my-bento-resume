@@ -8,14 +8,16 @@ export default function ContributionGrid() {
   };
 
   return (
-    <BentoCard className="col-span-2 lg:col-span-2 p-6 flex flex-col justify-between min-w-0">
+    <BentoCard className="col-span-1 md:col-span-2 lg:col-span-2 p-6 flex flex-col justify-between min-w-0">
       <div className="w-full">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-emerald-500/10">
               <GitCommit className="w-5 h-5 text-emerald-400" />
             </div>
-            <h2 className="text-xl font-semibold text-white">GitHub Activity</h2>
+            <h2 className="w-full text-lg sm:text-xl font-semibold text-white">
+              GitHub Активность
+            </h2>
           </div>
 
           <a
@@ -28,11 +30,9 @@ export default function ContributionGrid() {
           </a>
         </div>
 
-        {/* Контейнер с overflow-hidden, чтобы календарь не распирал карточку */}
         <div className="w-full overflow-hidden py-2 calendar-wrapper">
           <GitHubCalendar
             username="pavelkulak"
-            // Используем автоматический расчет размера, чтобы он вписывался в контейнер
             blockSize={12}
             blockMargin={4}
             colorScheme="dark"
@@ -43,14 +43,12 @@ export default function ContributionGrid() {
 
 
 
-      {/* Магия масштабирования через CSS */}
       <style>{`
         .calendar-wrapper svg {
           width: 100% !important;
           height: auto !important;
           display: block;
         }
-        /* Убираем стандартные паддинги библиотеки, если они мешают */
         .react-github-calendar__chart {
           margin: 0 !important;
           padding: 0 !important;
